@@ -6,7 +6,6 @@
 registry-node:
   dns:
     - 172.17.42.1
-    - 10.1.10.10
   dns_search:
     - service.watcher.b-com.com
 

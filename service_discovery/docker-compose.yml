@@ -10,7 +10,7 @@ consul:
   volumes_from: 
     - consuldata
   ports:
-    - "8500:8500"
+    - 8500:8500
     - 172.17.42.1:53:53/udp
 
 consuldata:
