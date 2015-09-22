@@ -6,7 +6,7 @@ mariadb:
     com.b-com.watcher.description: "Database for Watcher and Keystone"
   environment:
     SERVICE_NAME: mariadb
-  image: vdev-indeed0001:5000/watcher/mariadb:latest
+  image: watcher/mariadb:latest
   hostname: mariadb
   extends:
     file: ../service_discovery/settings.yml
@@ -24,7 +24,7 @@ rabbitmq:
     com.b-com.watcher.description: "Rabbitmq Server"
   environment:
     SERVICE_NAME: rabbitmq
-  image: vdev-indeed0001:5000/watcher/rabbitmq:latest
+  image: watcher/rabbitmq:latest
   hostname: rabbitmq
   extends:
     file: ../service_discovery/settings.yml
@@ -42,7 +42,7 @@ keystone:
     com.b-com.watcher.description: "Keystone Identity Service"
   environment:
     SERVICE_NAME: keystone
-  image: vdev-indeed0001:5000/watcher/keystone:latest
+  image: watcher/keystone:latest
   hostname: keystone
   extends:
     file: ../service_discovery/settings.yml
@@ -72,7 +72,7 @@ console:
     # OS_USERNAME: 
     # OS_PASSWORD:
     # OS_PROJECT_NAME:
-  image: vdev-indeed0001:5000/watcher/console:latest
+  image: watcher/console:latest
   hostname: console
   extends:
     file: ../service_discovery/settings.yml
@@ -94,7 +94,7 @@ api:
     # RABBITMQ_NODE: 
     # DEBUG_MODE: true
     # VERBOSE_MODE: true
-  image: vdev-indeed0001:5000/watcher/api:latest
+  image: watcher/api:latest
   hostname: watcher_api
   extends:
     file: ../service_discovery/settings.yml
@@ -119,7 +119,7 @@ decision-engine:
     # INFLUXDB_NODE: 
     # DEBUG_MODE: 
     # VERBOSE_MODE: 
-  image: vdev-indeed0001:5000/watcher/decision-engine:latest
+  image: watcher/decision-engine:latest
   hostname: watcher_de
   extends:
     file: ../service_discovery/settings.yml
@@ -142,7 +142,7 @@ applier:
     # RABBITMQ_NODE: 
     # DEBUG_MODE: 
     # VERBOSE_MODE: 
-  image: vdev-indeed0001:5000/watcher/applier:latest
+  image: watcher/applier:latest
   hostname: watcher_applier
   extends:
     file: ../service_discovery/settings.yml
@@ -159,7 +159,7 @@ applier:
 #   environment:
 #     SERVICE_NAME: horizon
 #     # KEYSTONE_NODE: 
-#   image: vdev-indeed0001:5000/watcher/ui
+#   image: watcher/ui
 #   hostname: horizon
 #   extends:
 #     file: ../service_discovery/settings.yml
@@ -179,7 +179,7 @@ applier:
 #     REGISTER_SERVICE: consul
 #     IAAS_IP: keystone.node.indeed.consul
 #     IAAS_REGION: RegionOne
-#   image: vdev-indeed0001:5000/indeed/tempest
+#   image: indeed/tempest
 #   hostname: tempest
 #   dns:
 #     - consul

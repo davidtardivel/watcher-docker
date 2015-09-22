@@ -6,7 +6,7 @@ watcher-metering-agent:
     vendor: B<>COM
     com.b-com.watcher.description: "Watcher Metering Agent"
   hostname: watcher-metering-agent
-  image: vdev-indeed0001:5000/watcher/metering-agent:latest
+  image: watcher/metering-agent:latest
   extends:
     file: ../service_discovery/settings.yml
     service: registry-node
@@ -16,7 +16,7 @@ watcher-metering-publisher:
     vendor: B<>COM
     com.b-com.watcher.description: "Watcher Metering Publisher"
   hostname: watcher-metering-publisher
-  image: vdev-indeed0001:5000/watcher/metering-publisher:latest
+  image: watcher/metering-publisher:latest
   environment:
     SERVICE_12345_NAME: watcher-metering-publisher
   extends:
@@ -28,7 +28,7 @@ nanoconfig-server:
     vendor: B<>COM
     com.b-com.watcher.description: "Nanoconfig Server"
   hostname: nanoconfig-server
-  image: vdev-indeed0001:5000/watcher/nanoconfig-server:latest
+  image: watcher/nanoconfig-server:latest
   environment:
     SERVICE_10800_NAME: nanoconfig
     SERVICE_10900_NAME: nanoconfig
@@ -41,7 +41,7 @@ riemann:
     vendor: B<>COM
     com.b-com.watcher.description: "Riemann CEP Service"
   hostname: riemann
-  image: vdev-indeed0001:5000/watcher/riemann:latest
+  image: watcher/riemann:latest
   environment:
     SERVICE_5555_NAME: riemann
     INFLUXDB_HOST: influxdb.service.watcher.b-com.com
@@ -58,7 +58,7 @@ influxdb:
     vendor: B<>COM
     com.b-com.watcher.description: "InfluxDB Time Serie Database"
   hostname: influxdb
-  image: vdev-indeed0001:5000/watcher/influxdb:latest
+  image: watcher/influxdb:latest
   environment:
     SERVICE_8086_NAME: influxdb
     INFLUXDB_VERSION: 0.9.2
@@ -83,7 +83,7 @@ grafana:
     vendor: B<>COM
     com.b-com.watcher.description: "Grafana Metrics Dashboard"
   hostname: grafana
-  image: vdev-indeed0001:5000/watcher/grafana:latest
+  image: watcher/grafana:latest
   environment:
     SERVICE_3000_NAME: grafana
     INFLUXDB_HOST: influxdb.service.watcher.b-com.com
